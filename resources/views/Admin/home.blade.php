@@ -1,2 +1,0 @@
-@extends('Admin.index');
-

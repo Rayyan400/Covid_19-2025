@@ -1,6 +1,6 @@
-@extends('frontend.index');
-
 @section('contant')
+@extends('frontend.index')
+
 <div class="hero-v1">
     <div class="container">
       <div class="row align-items-center">
