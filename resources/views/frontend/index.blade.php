@@ -52,18 +52,18 @@
     
     <header class="site-navbar light js-sticky-header site-navbar-target" role="banner">
 
-      <div class="container">
+      <div class="container-fluid">
         <div class="row align-items-center">
 
           <div class="col-6 col-xl-2">
-            <div class="mb-0 site-logo"><a href="index.html" class="mb-0">Covid<span class="text-primary">.</span> </a></div>
+            <div class="mb-0 site-logo"><a href="{{route('home.page')}}" class="mb-0">Covid<span class="text-primary">.</span> </a></div>
           </div>
 
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="active"><a href="{{route('home.page')}}" class="nav-link">Home</a></li>
                 <li class="has-children">
                   <a href="prevention.html" class="nav-link">Prevention</a>
                   <ul class="dropdown">
@@ -87,6 +87,8 @@
 
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><button href="#" class="btn btn-primary">signup</button></li>
+                <li><button href="#" class="btn btn-primary">login</button></li>
               </ul>
             </nav>
           </div>
@@ -500,22 +502,22 @@
     </div> --}}
 
     <div class="site-footer">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-lg-4">
-            <h2 class="footer-heading mb-4">About</h2>
+            <h1 class="text-primary mb-4 font-weight-bold">About</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi cumque tenetur inventore veniam, hic vel ipsa necessitatibus ducimus architecto fugiat!</p>
-            <div class="my-5">
-              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+            <div class="my-5 align-content-center justify-content-around d-flex mx-3">
+              <a href="#" class="pl-2 pr-2"><span class="icon-facebook"></span></a>
+              <a href="#" class="pl-2 pr-2"><span class="icon-twitter"></span></a>
+              <a href="#" class="pl-2 pr-2"><span class="icon-instagram"></span></a>
+              <a href="#" class="pl-2 pr-2"><span class="icon-linkedin"></span></a>
             </div>
           </div>
           <div class="col-lg-8">
-            <div class="row">
-              <div class="col-lg-4">
-                <h2 class="footer-heading mb-4">Quick Links</h2>
+            <div class="row align-content-center">
+              <div class="col-lg-4 text-center">
+                <h2 class="footer-heading mb-4 font-weight-bold">Quick Links</h2>
                 <ul class="list-unstyled">
                   <li><a href="#">Symptoms</a></li>
                   <li><a href="#">Prevention</a></li>
@@ -524,8 +526,8 @@
                   <li><a href="#">Contact Us</a></li>
                 </ul>
               </div>
-              <div class="col-lg-4">
-                <h2 class="footer-heading mb-4">Helpful Link</h2>
+              <div class="col-lg-4 text-center">
+                <h2 class="footer-heading mb-4 font-weight-bold">Helpful Link</h2>
                 <ul class="list-unstyled">
                   <li><a href="#">Helathcare Professional</a></li>
                   <li><a href="#">LGU Facilities</a></li>
@@ -533,8 +535,8 @@
                   <li><a href="#">World Health</a></li>
                 </ul>
               </div>
-              <div class="col-lg-4">
-                <h2 class="footer-heading mb-4">Resources</h2>
+              <div class="col-lg-4 text-center">
+                <h2 class="footer-heading mb-4 font-weight-bold">Resources</h2>
                 <ul class="list-unstyled">
                   <li><a href="#">WHO Website</a></li>
                   <li><a href="#">CDC Website</a></li>
@@ -543,19 +545,6 @@
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p class="copyright"><small>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small></p>
-
-              </div>
-            </div>
-
           </div>
         </div>
       </div>

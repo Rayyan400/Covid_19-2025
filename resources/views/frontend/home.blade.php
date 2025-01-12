@@ -81,9 +81,9 @@
             </div>
           </figure>
         </div>
-        <div class="col-lg-5 ml-auto">
-          <h2 class="mb-4 section-heading">What is Coronavirus?</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex officia quas, modi sit eligendi numquam!</p>
+        <div class="col-lg-6">
+          <h1 class="mb-4 text-primary">What is Coronavirus?</h1>
+          <p class="justify-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex officia quas, modi sit eligendi numquam!</p>
           <ul class="list-check list-unstyled mb-5">
             <li>Lorem ipsum dolor sit amet</li>
             <li>Consectetur adipisicing elit</li>
