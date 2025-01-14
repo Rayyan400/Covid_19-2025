@@ -56,14 +56,14 @@
         <div class="row align-items-center">
 
           <div class="col-6 col-xl-2">
-            <div class="mb-0 site-logo"><a href="{{route('home.page')}}" class="mb-0">Covid<span class="text-primary">.</span> </a></div>
+            <div class="mb-0 site-logo"><a href="#" class="mb-0">Covid<span class="text-primary">.</span> </a></div>
           </div>
 
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="{{route('home.page')}}" class="nav-link">Home</a></li>
+                <li class="active"><a href="{{route('website')}}" class="nav-link">Home</a></li>
                 <li class="has-children">
                   <a href="prevention.html" class="nav-link">Prevention</a>
                   <ul class="dropdown">
@@ -87,8 +87,8 @@
 
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><button href="#" class="btn btn-primary">signup</button></li>
-                <li><button href="#" class="btn btn-primary">login</button></li>
+                <li><a href="{{route('user.form')}}" class="btn btn-primary">signup</a></li>
+                <li><a href="{{route('user.out')}}" class="btn btn-primary">logout</a></li>
               </ul>
             </nav>
           </div>
