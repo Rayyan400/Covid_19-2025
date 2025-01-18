@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -43,7 +44,10 @@ class UserController extends Controller
         if(Auth::attempt($value)) // Auth =users
         {
             return redirect()->route('website');
-        } 
+        }
+        else{
+            return redirect()->route('user.login');
+        }
     }
 
     public function website() {
@@ -52,6 +56,8 @@ class UserController extends Controller
 
     public function logout()
     {
+        Auth::logout();
+        Session::flush();
         return redirect()->route('user.login');
     }
 

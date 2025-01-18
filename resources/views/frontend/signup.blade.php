@@ -1,6 +1,4 @@
--- Active: 1734621562626@@127.0.0.1@3306@covid19
-@extends('frontend.index')
-@section('contant')
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -39,6 +37,4 @@
       </div>
     </div>
   </div>
-
-@endsection
 

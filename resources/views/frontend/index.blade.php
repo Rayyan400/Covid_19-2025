@@ -30,12 +30,7 @@
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
 
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
+ 
 
 
   <div class="site-wrap">
@@ -87,7 +82,12 @@
 
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="{{route('user.form')}}" class="btn btn-primary">signup</a></li>
+
+                @if(Auth::check() && Auth::user()->role == 'admin')
+                  <li><a href="{{route('admin.page')}}" class="btn btn-primary">Dashboard</a></li>
+                @endif
+                
+                {{-- <li><a href="{{route('user.form')}}" class="btn btn-primary">signup</a></li> --}}
                 <li><a href="{{route('user.out')}}" class="btn btn-primary">logout</a></li>
               </ul>
             </nav>
