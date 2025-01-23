@@ -90,8 +90,8 @@
                         <h6 class="collapse-header"></h6>
                         
                         <a class="collapse-item" href="{{route('patients.create')}}">create</a>
-                        {{-- <a class="collapse-item" href="{{route('patients.edit', )}}">edit</a> --}}
-                        {{-- <a class="collapse-item" href="{{route('patients.show')}}">show</a> --}}
+                        {{-- <a class="collapse-item" href="{{route('patients.edit')}}">edit</a> --}}
+                        <a class="collapse-item" href="{{route('patients.index')}}">show</a>
 
                     </div>
                 </div>

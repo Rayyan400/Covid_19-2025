@@ -1,24 +1,40 @@
 @extends('Admin.index')
 
 @section('content')
-    <h1>Patient Details</h1>
 
-    <div>
-        <strong>Name:</strong> {{$patient->name}}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card-header text-center">
+                    <h3 class="text-primary">Patient Details</h3>
+                  </div>
+                <table class="table text-center table-bordered table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach ($patients as $data)
+                    <tr>
+                        <td>{{$data->id}}</td>
+                        <td>{{$data->name}}</td>
+                        <td>{{$data->email}}</td>
+                        <td>{{$data->phone}}</td>
+                        <td><a href="" class="btn btn-primary">View</a></td>
+                        <td><a href="{{route('patients.edit', $data->id)}}" class="btn btn-success">Edit</a></td>
+                        <form action="{{route('patients.destroy',$data->id)}}"  method="post">
+                        @csrf
+                        @method('Delete')
+                        <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                        </form>
+                    </tr>    
+                    @endforeach
+                </table>
+            </div>
+        </div>
     </div>
-    <div>
-        <strong>Email:</strong> {{$patient->email}}
-    </div>
-    <div>
-        <strong>Phone:</strong> {{$patient->phone}}
-    </div>
-
-    <a href="{{ route('patients.edit', $patient->id) }}">Edit Patient</a>
-    <form action="{{ route('patients.destroy', $patient->id) }}" method="POST" style="display:inline;">
-        @csrf
-        @method('DELETE')
-        <button type="submit" onclick="return confirm('Are you sure you want to delete this patient?');">Delete Patient</button>
-    </form>
-    <br>
-    <a href="{{ route('patients.index') }}">Back to Patients List</a>
 @endsection

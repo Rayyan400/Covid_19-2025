@@ -1,25 +1,36 @@
 @extends('Admin.index')
 @section('content')
-    <h1>Add Patient</h1>
 
-   
-    <form action="{{route('patient.store')}}" method ="POST" enctype="multipart/form-data">
-        @csrf
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" value="{{ old('name') }}" required>
-        
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="card mt-4">
+                <div class="card-header text-center">
+                    <h3 class="text-primary">Add - Patient</h3>
+                  </div>
+                  <div class="card-body">
+
+                      <form action="{{route('patients.store')}}" method ="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+            <label for="n" class="form-label">Name:</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+            
         </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" value="{{ old('email') }}" required>
+        <div class="mb-3">
+            <label for="e" class="form-label">Email:</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
         </div>
-        <div>
-            <label for="phone">Phone:</label>
-            <input type="text" name="phone" id="phone" value="{{ old('phone') }}">
+        <div class="mb-3">
+            <label for="ph" class="form-label">Phone:</label>
+            <input type="number" class="form-control" name="phone" id="phone" placeholder="Enter Phone number">
         </div>
-        <button type="submit">Add Patient</button>
+        <button type="submit" class="btn btn-primary">Add Patient</button>
     </form>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <a href="{{route('patients.index')}}">Back to Patients List</a>
 @endsection

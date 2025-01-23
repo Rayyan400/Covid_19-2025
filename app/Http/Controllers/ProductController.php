@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -49,6 +50,7 @@ class ProductController extends Controller
             'description'=>$request->description,
             'image'=>$imagefile
         ]);
+        return redirect()->route('product.index');
     }
 
     /**
@@ -64,7 +66,8 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $products = Product::find($id);
+        return view('Product.edit',['product' => $products]);
     }
 
     /**
@@ -72,7 +75,17 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::findOrFail($id);  // Retrieve the patient by ID
+
+    $request->validate([
+        'name' => 'required',
+        'price' => 'required',
+        'description' => 'nullable',
+    ]);
+
+    $product->update($request->all());
+
+    return redirect()->route('product.index');
     }
 
     /**
@@ -80,6 +93,7 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product = DB::table('products')->where('id' , $id)->delete();
+        return redirect()->route('product.index');
     }
 }

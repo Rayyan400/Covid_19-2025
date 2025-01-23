@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Patient; // Correct import statement
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Patient; // Correct import statement
 
 class PatientController extends Controller
 {
@@ -26,31 +27,34 @@ class PatientController extends Controller
         'phone' => 'nullable',
     ]);
 
-    Patient::create($request->all());
-
-    return redirect()->route('patients.index')->with('success', 'Patient created successfully.');
+    Patient::insert([
+        'name'=>$request->name,
+        'email'=>$request->email,
+        'phone'=>$request->phone,
+    ]);
+    return redirect()->route('patients.index');
 }
 
 
         public function show(Patient $patient)
     {
-        $patient = Patient::all();
-        return view('Admin.Patient.show', compact('patient'));
+        // $patient = Patient::all();
+        // return view('Admin.Patient.show', compact('patient'));
     }
 
     public function edit($id)
     {
-        $patient = Patient::where('id',$id)->first();
-        return view('Admin.Patient.edit',['patient' => $patient]);
+        $patients = Patient::find($id);
+        return view('Admin.Patient.edit',['patient' => $patients]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request,string $id)
 {
     $patient = Patient::findOrFail($id);  // Retrieve the patient by ID
 
     $request->validate([
         'name' => 'required',
-        'email' => 'required|email|unique:patients,email,' . $patient->id,
+        'email' => 'required',
         'phone' => 'nullable',
     ]);
 
@@ -60,9 +64,12 @@ class PatientController extends Controller
 }
 
 
-    public function destroy(Patient $patient)
+    public function destroy(string $id)
     {
-        $patient->delete();
-        return redirect()->route('patients.index')->with('success', 'Patient deleted successfully.');
+        // Patient::table('patients')->where('id' , $id)->delete();
+        // return redirect()->route('patients.index');
+
+        $Patient = DB::table('patients')->where('id' , $id)->delete();
+        return redirect()->route('patients.index');
     }
 }

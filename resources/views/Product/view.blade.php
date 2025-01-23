@@ -23,8 +23,12 @@
                         <td>{{$pro->description}}</td>
                         <td><img src="{{asset('storage/'.$pro->image)}}" alt="" style="height: 70px; width: 200px; object-fit:contain"></td>
                         <td><a href="" class="btn btn-primary">View</a></td>
-                        <td><a href="" class="btn btn-success">Edit</a></td>
-                        <td><a href="" class="btn btn-danger">Delete</a></td>
+                        <td><a href="{{route('product.edit', $pro->id)}}" class="btn btn-success">Edit</a></td>
+                        <form action="{{route('product.destroy', $pro->id)}}" method="post">
+                            @csrf
+                            @method('Delete')
+                            <td><button type="submit" class="btn btn-danger">Delete</button></td>
+                        </form>
                     </tr>    
                     @endforeach
                 </table>
