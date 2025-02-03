@@ -82,13 +82,23 @@
 
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-
-                @if(Auth::check() && Auth::user()->role == 'admin')
-                  <li><a href="{{route('admin.page')}}" class="btn btn-primary">Dashboard</a></li>
-                @endif
+                <li>
+                  <form action="{{route('admin.page')}}" method="post">
+                  @method('get')
+                  @csrf
+                  @if(Auth::check() && Auth::user()->role == 'admin')
+                  <button type="submit" class="btn btn-primary">Dashboard</button>
+                  @endif
+                  </form>
+                </li>
                 
                 {{-- <li><a href="{{route('user.form')}}" class="btn btn-primary">signup</a></li> --}}
-                <li><a href="{{route('user.out')}}" class="btn btn-primary">logout</a></li>
+                <li>
+                  <form action="{{route('user.out')}}" method="get">
+                    @csrf
+                    <button class="btn btn-primary">logout</button></li>
+                  </form>
+                </li>
               </ul>
             </nav>
           </div>

@@ -35,7 +35,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <div class="card" style="margin-top: 180px;margin-bottom:100px;">
+        <div class="card" style="margin-top: 35px">
           <div class="card-header text-center">
             <h3 class="text-primary">Login</h3>
           </div>

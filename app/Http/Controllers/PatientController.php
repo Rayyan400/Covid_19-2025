@@ -68,7 +68,7 @@ class PatientController extends Controller
     {
         // Patient::table('patients')->where('id' , $id)->delete();
         // return redirect()->route('patients.index');
-
+        
         $Patient = DB::table('patients')->where('id' , $id)->delete();
         return redirect()->route('patients.index');
     }

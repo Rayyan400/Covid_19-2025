@@ -21,6 +21,11 @@ Route::get('/about' , [UserController::class, 'about'])->name('about.page');
 
 // Admin Routes
 Route::get('/admin',[AdminController::class, 'admin'])->name('admin.page')->middleware(['role:admin','auth']);
+
+Route::get('/users',[UserController::class, 'userList'])->name('users.list')->middleware(['role:admin','auth']);
+Route::get('/users/{id}',[UserController::class, 'update'])->name('users.update')->middleware(['role:admin','auth']);
+Route::get('/users/{id}/edit',[UserController::class, 'edit'])->name('users.edit')->middleware(['role:admin','auth']);
+Route::delete('/users/{id}/delete',[UserController::class, 'distroy'])->name('users.delete')->middleware(['role:admin','auth']);
 // 
 Route::resource('/product',ProductController::class);
 // Route::get('/patient' , [PatientController::class, 'index'])->name('patient.index');

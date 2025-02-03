@@ -23,12 +23,11 @@
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 </head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
+<body>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <div class="card" style="margin-top: 150px">
+        <div class="card" style="margin-top: 35px">
           <div class="card-header text-center">
             <h3 class="text-primary">Signup</h3>
           </div>

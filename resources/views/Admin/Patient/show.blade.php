@@ -2,12 +2,12 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card-header text-center">
                     <h3 class="text-primary">Patient Details</h3>
-                  </div>
+                </div>
                 <table class="table text-center table-bordered table-striped">
                     <tr>
                         <th>ID</th>
